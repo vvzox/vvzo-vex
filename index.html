@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vex - Hatch a useless little internet creature</title>
+    <meta name="description" content="Hatch your own pixel Vex, save it as an avatar, and return tomorrow for another useless prophecy.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">vvzo.me presents</p>
+        <h1>Hatch a useless little internet creature.</h1>
+        <p class="hero-copy">
+          Vex lives in your browser, says nonsense daily, and may or may not be rare enough
+          to justify your personality.
+        </p>
+        <div class="hero-actions">
+          <button class="primary-button" id="startButton" type="button">Hatch Vex</button>
+          <button class="ghost-button hidden" id="resetButton" type="button">Come back tomorrow</button>
+        </div>
+      </section>
+
+      <section class="machine" aria-label="Vex hatch machine">
+        <div class="screen">
+          <div class="scanline"></div>
+          <canvas id="vexCanvas" width="512" height="512" aria-label="Pixel Vex preview"></canvas>
+        </div>
+        <div class="machine-panel">
+          <div>
+            <span class="panel-label">Specimen</span>
+            <strong id="petName">Unhatched Vex</strong>
+          </div>
+          <div>
+            <span class="panel-label">Rarity</span>
+            <strong id="petRarity">Unknown</strong>
+          </div>
+          <div>
+            <span class="panel-label">Daily nonsense</span>
+            <p id="dailyLine">Click Hatch. The creature is pretending not to care.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="hatch-flow hidden" id="hatchFlow" aria-label="Hatch questions">
+        <div class="question-meta">
+          <span id="questionCount">Question 1 / 5</span>
+          <div class="progress-track"><span id="progressBar"></span></div>
+        </div>
+        <h2 id="questionTitle">Question</h2>
+        <div class="option-grid" id="optionGrid"></div>
+      </section>
+
+      <section class="result hidden" id="resultPanel" aria-label="Your Vex result">
+        <div class="result-header">
+          <div>
+            <p class="eyebrow">Your browser resident</p>
+            <h2 id="resultName">Vex</h2>
+          </div>
+          <span class="rarity-pill" id="rarityPill">Common Vex</span>
+        </div>
+        <div class="result-grid">
+          <div>
+            <span class="panel-label">Vex ID</span>
+            <strong id="vexId">VEX-0000-0000</strong>
+          </div>
+          <div>
+            <span class="panel-label">Drop rate</span>
+            <strong id="dropRate">49.99%</strong>
+          </div>
+          <div>
+            <span class="panel-label">Mood</span>
+            <strong id="vexMood">buffering</strong>
+          </div>
+        </div>
+        <div>
+          <span class="panel-label">Rare-ish traits</span>
+          <ul class="trait-list" id="traitList"></ul>
+        </div>
+        <div class="export-actions">
+          <button class="primary-button" id="saveAvatarButton" type="button">Save Avatar</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="vex-core.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
